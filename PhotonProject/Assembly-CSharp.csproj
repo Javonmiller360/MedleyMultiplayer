@@ -63,6 +63,7 @@
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Scripts\ChangePOV.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChatAppIdCheckerUI.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
+    <Compile Include="Assets\Scripts\PlayerAnimatorManager.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Scripts\CharacterInstantiation.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
@@ -106,7 +107,7 @@
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
-    <Compile Include="Assets\Scripts\PlayerAnimatorManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
