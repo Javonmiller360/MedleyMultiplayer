@@ -409,6 +409,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5960185514608389148, guid: 0211e3e8e5a117a4ca99660984b55cd9, type: 3}
+      propertyPath: followOnStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8680739402165751916, guid: 0211e3e8e5a117a4ca99660984b55cd9, type: 3}
       propertyPath: m_Name
       value: My Remote Kyle

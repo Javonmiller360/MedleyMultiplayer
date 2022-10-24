@@ -3,8 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Photon.Pun;
-public class PlayerManager : MonoBehaviourPunCallbacks
+using Photon.Pun.Demo.PunBasics;
+
+public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
 {
+    #region IPunObservable implementation
+
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            // We own this player: send the others our data
+            stream.SendNext(IsFiring);
+            stream.SendNext(Health);
+        }
+        else
+        {
+            // Network player, receive data
+            this.IsFiring = (bool)stream.ReceiveNext();
+            this.Health = (float)stream.ReceiveNext();
+        }
+    }
+
+
+    #endregion
     #region Private Fields
 
     [Tooltip("The Beams GameObject to control")]
@@ -13,9 +36,14 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     //True, when the user is firing
     bool IsFiring;
     #endregion
+
     #region Public Fields
+
     [Tooltip("The current Health of our player")]
     public float Health = 1f;
+    [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
+    public static GameObject LocalPlayerInstance;
+
     #endregion
 
     #region MonoBehaviour CallBacks
@@ -24,23 +52,55 @@ public class PlayerManager : MonoBehaviourPunCallbacks
     /// MonoBehaviour method called on GameObject by Unity during early initialization phase.
     /// </summary>
     void Awake()
+    {
+        if (beams == null)
         {
-            if (beams == null)
+            Debug.LogError("<Color=Red><a>Missing</a></Color> Beams Reference.", this);
+        }
+        else
+        {
+            beams.SetActive(false);
+        }
+        // #Important
+        // used in GameManager.cs: we keep track of the localPlayer instance to prevent instantiation when levels are synchronized
+        if (photonView.IsMine)
+        {
+            PlayerManager.LocalPlayerInstance = this.gameObject;
+        }
+        // #Critical
+        // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
+        DontDestroyOnLoad(this.gameObject);
+    }
+    void Start()
+    {
+        CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
+
+
+        if (_cameraWork != null)
+        {
+            if (photonView.IsMine)
             {
-                Debug.LogError("<Color=Red><a>Missing</a></Color> Beams Reference.", this);
-            }
-            else
-            {
-                beams.SetActive(false);
+                _cameraWork.OnStartFollowing();
             }
         }
-
-        /// <summary>
-        /// MonoBehaviour method called on GameObject by Unity on every frame.
-        /// </summary>
+        else
+        {
+            Debug.LogError("<Color=Red><a>Missing</a></Color> CameraWork Component on playerPrefab.", this);
+        }
+#if UNITY_5_4_OR_NEWER
+        // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+#endif
+    }
+    /// <summary>
+    /// MonoBehaviour method called on GameObject by Unity on every frame.
+    /// </summary>
     void Update()
     {
-        ProcessInputs();
+        if (photonView.IsMine)
+        {
+            ProcessInputs();
+        }
 
         // trigger Beams active state
         if (beams != null && IsFiring != beams.activeInHierarchy)
@@ -92,6 +152,31 @@ public class PlayerManager : MonoBehaviourPunCallbacks
         // we slowly affect health when beam is constantly hitting us, so player has to move to prevent death.
         Health -= 0.1f * Time.deltaTime;
     }
+#if UNITY_5_4_OR_NEWER
+    public override void OnDisable()
+    {
+        // Always call the base to remove callbacks
+        base.OnDisable();
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+#endif
+#if !UNITY_5_4_OR_NEWER
+/// <summary>See CalledOnLevelWasLoaded. Outdated in Unity 5.4.</summary>
+void OnLevelWasLoaded(int level)
+{
+    this.CalledOnLevelWasLoaded(level);
+}
+#endif
+
+
+    void CalledOnLevelWasLoaded(int level)
+    {
+        // check if we are outside the Arena and if it's the case, spawn around the center of the arena in a safe zone
+        if (!Physics.Raycast(transform.position, -Vector3.up, 5f))
+        {
+            transform.position = new Vector3(0f, 5f, 0f);
+        }
+    }
 
     #endregion
 
@@ -118,5 +203,14 @@ public class PlayerManager : MonoBehaviourPunCallbacks
         }
     }
 
+    #endregion
+
+    #region Private Methods
+#if UNITY_5_4_OR_NEWER
+    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode loadingMode)
+    {
+        this.CalledOnLevelWasLoaded(scene.buildIndex);
+    }
+#endif
     #endregion
 }
