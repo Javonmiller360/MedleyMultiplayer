@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Rigidbody rb;
     public GameObject explosion;
@@ -25,6 +26,22 @@ public class Bullet : MonoBehaviour
 
     private void Start() {
         Setup();
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            // We own this player: send the others our data
+            //stream.SendNext(IsFiring);
+            //stream.SendNext(Health);
+        }
+        else
+        {
+            // Network player, receive data
+            //this.IsFiring = (bool)stream.ReceiveNext();
+            //this.Health = (float)stream.ReceiveNext();
+        }
     }
 
     private void Update(){

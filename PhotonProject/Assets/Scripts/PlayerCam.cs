@@ -9,6 +9,7 @@ public class PlayerCam : MonoBehaviourPunCallbacks, IPunObservable
     public float sensY;
 
     public Transform orientation;
+    public Camera myCamera;
 
     float xRotation;
     float yRotation;
@@ -18,6 +19,10 @@ public class PlayerCam : MonoBehaviourPunCallbacks, IPunObservable
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        if (!photonView.IsMine){
+            myCamera.enabled = false;
+        }
     }
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
