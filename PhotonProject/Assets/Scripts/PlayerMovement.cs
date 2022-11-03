@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
 {
     [Header("Movement")]
     public float moveSpeed;
@@ -34,17 +35,35 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
     }
 
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            // We own this player: send the others our data
+            //stream.SendNext(IsFiring);
+            //stream.SendNext(Health);
+        }
+        else
+        {
+            // Network player, receive data
+            //this.IsFiring = (bool)stream.ReceiveNext();
+            //this.Health = (float)stream.ReceiveNext();
+        }
+    }
+
     private void Update()
     {
-        MyInput();
-        SpeedControl();
+        if (photonView.IsMine){
+            MyInput();
+            SpeedControl();
 
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
+            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, Ground);
 
-        if (grounded){
-            rb.drag = groundDrag;
-        } else {
-            rb.drag = 0;
+            if (grounded){
+                rb.drag = groundDrag;
+            } else {
+                rb.drag = 0;
+            }
         }
     }
 
