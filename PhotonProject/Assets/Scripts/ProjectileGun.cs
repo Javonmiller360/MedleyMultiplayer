@@ -45,16 +45,18 @@ public class ProjectileGun : MonoBehaviourPunCallbacks, IPunObservable
 
     private void Update()
     {
-        if (photonView.IsMine){
+        {
             MyInput();
         }
     }
 
     private void MyInput(){
-        if (allowButtonHolding){
-            shooting = Input.GetKey(KeyCode.Mouse0);
-        } else {
-            shooting = Input.GetKeyDown(KeyCode.Mouse0);
+        if (photonView.IsMine){
+            if (allowButtonHolding){
+                shooting = Input.GetKey(KeyCode.Mouse0);
+            } else {
+                shooting = Input.GetKeyDown(KeyCode.Mouse0);
+            }
         }
 
         if(Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSize && !reloading){
