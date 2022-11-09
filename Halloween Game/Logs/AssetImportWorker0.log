@@ -11,13 +11,13 @@ D:\Unity\2021.3.9f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-D:/GIMM/Unity/Halloween Game
+D:/GitHub/MedleyMultiplayer/Halloween Game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-62576
-Successfully changed project path to: D:/GIMM/Unity/Halloween Game
-D:/GIMM/Unity/Halloween Game
+64116
+Successfully changed project path to: D:/GitHub/MedleyMultiplayer/Halloween Game
+D:/GitHub/MedleyMultiplayer/Halloween Game
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,11 +47,11 @@ D:/GIMM/Unity/Halloween Game
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 130.14 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 310.87 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.9f1 (ad3870b89536)
 [Subsystems] Discovering subsystems at path D:/Unity/2021.3.9f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/GIMM/Unity/Halloween Game/Assets
+[Subsystems] Discovering subsystems at path D:/GitHub/MedleyMultiplayer/Halloween Game/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -63,100 +63,101 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2021.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2021.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity/2021.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56752
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56404
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2021.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/Unity/2021.3.9f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: D:/Unity/2021.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: D:/Unity/2021.3.9f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.004503 seconds.
+Registered in 0.009608 seconds.
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 124.30 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 271.13 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.737 seconds
+- Completed reload, in  1.612 seconds
 Domain Reload Profiling:
-	ReloadAssembly (738ms)
-		BeginReloadAssembly (87ms)
+	ReloadAssembly (1613ms)
+		BeginReloadAssembly (195ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (542ms)
-			LoadAssemblies (88ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (1174ms)
+			LoadAssemblies (198ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (121ms)
+			SetupTypeCache (276ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (31ms)
-			SetupLoadedEditorAssemblies (340ms)
+			RebuildScriptCaches (66ms)
+			SetupLoadedEditorAssemblies (719ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (65ms)
-				SetLoadedEditorAssemblies (2ms)
-				RefreshPlugins (124ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (98ms)
-				ProcessInitializeOnLoadMethodAttributes (48ms)
+				InitializePlatformSupportModulesInManaged (137ms)
+				SetLoadedEditorAssemblies (4ms)
+				RefreshPlugins (271ms)
+				BeforeProcessingInitializeOnLoad (4ms)
+				ProcessInitializeOnLoadAttributes (203ms)
+				ProcessInitializeOnLoadMethodAttributes (99ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008533 seconds.
+Registered in 0.024197 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GIMM\Unity\Halloween Game\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GIMM\Unity\Halloween Game\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Android Extension - Scanning For ADB Devices 6470 ms
+Symbol file LoadedFromMemory doesn't match image D:\GitHub\MedleyMultiplayer\Halloween Game\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\GitHub\MedleyMultiplayer\Halloween Game\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 128.29 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 275.59 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.195 seconds
+- Completed reload, in  6.116 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2196ms)
-		BeginReloadAssembly (265ms)
+	ReloadAssembly (6118ms)
+		BeginReloadAssembly (506ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (13ms)
+			DisableScriptedObjects (20ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (123ms)
-		EndReloadAssembly (1797ms)
-			LoadAssemblies (126ms)
+			CreateAndSetChildDomain (48ms)
+		EndReloadAssembly (5235ms)
+			LoadAssemblies (432ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (347ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (97ms)
-			SetupLoadedEditorAssemblies (1201ms)
+			SetupTypeCache (902ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (314ms)
+			SetupLoadedEditorAssemblies (3672ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (21ms)
+				InitializePlatformSupportModulesInManaged (44ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (128ms)
-				BeforeProcessingInitializeOnLoad (114ms)
-				ProcessInitializeOnLoadAttributes (821ms)
-				ProcessInitializeOnLoadMethodAttributes (114ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
+				RefreshPlugins (276ms)
+				BeforeProcessingInitializeOnLoad (325ms)
+				ProcessInitializeOnLoadAttributes (2744ms)
+				ProcessInitializeOnLoadMethodAttributes (271ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (2ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.03 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
+Refreshing native plugins compatible for Editor in 2.49 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6074 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 82 unused Assets / (2.0 MB). Loaded Objects now: 6551.
-Memory consumption went from 248.9 MB to 246.9 MB.
-Total: 5.323200 ms (FindLiveObjects: 0.576600 ms CreateObjectMapping: 0.625800 ms MarkObjects: 3.617700 ms  DeleteObjects: 0.488200 ms)
+Unloading 6645 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 83 unused Assets / (2.8 MB). Loaded Objects now: 7123.
+Memory consumption went from 269.1 MB to 266.3 MB.
+Total: 12.700900 ms (FindLiveObjects: 0.947900 ms CreateObjectMapping: 1.111000 ms MarkObjects: 8.276700 ms  DeleteObjects: 2.363800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -171,31 +172,49 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 292376.707838 seconds.
-  path: Assets/Materials/Material.006.mat
-  artifactKey: Guid(c9db13157adfccf4c866d977fb493f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Material.006.mat using Guid(c9db13157adfccf4c866d977fb493f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fedfe79958fba06a0aea19456f6d5de') in 0.296754 seconds 
+  Time since last request: 432998.351907 seconds.
+  path: Assets/VFX/Explosion.vfx
+  artifactKey: Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VFX/Explosion.vfx using Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bfb3508da9c11b0e0afe276cc3207b6') in 0.479029 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.097233 seconds.
-  path: Assets/HalloweenExport
-  artifactKey: Guid(4bbf9159b8b5b364e8fd188a40a1e138) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HalloweenExport using Guid(4bbf9159b8b5b364e8fd188a40a1e138) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c47953fdb8aaff7d7834591e9880f51') in 0.011333 seconds 
+  Time since last request: 4.673787 seconds.
+  path: Assets/VFX/Explosion.vfx
+  artifactKey: Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VFX/Explosion.vfx using Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8fa2ad03ad81fea3d83f3c8b9bd2796') in 0.035489 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.101968 seconds.
-  path: Assets/Prefabs/Lightpost.prefab
-  artifactKey: Guid(8bb25e18a92b4ee4cb482cb2141428b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Lightpost.prefab using Guid(8bb25e18a92b4ee4cb482cb2141428b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93ed66f66a5bda04b139dbf5d9163b77') in 0.039117 seconds 
+  Time since last request: 31.661342 seconds.
+  path: Assets/VFX/Explosion.vfx
+  artifactKey: Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VFX/Explosion.vfx using Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b72bcf42675613e5056ba12fc3916a95') in 0.025025 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.005527 seconds.
-  path: Assets/Prefabs/WoodFence.prefab
-  artifactKey: Guid(6b814cddde781284e9f0b5163636e669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/WoodFence.prefab using Guid(6b814cddde781284e9f0b5163636e669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebe7144ffa4b65793f7dc2cc6e03d4eb') in 0.015673 seconds 
+  Time since last request: 15.059725 seconds.
+  path: Assets/VFX/Explosion.vfx
+  artifactKey: Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VFX/Explosion.vfx using Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd62c3f1e29c085e8e4d01176e522f020') in 0.029811 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 103.972810 seconds.
-  path: Assets/HalloweenExport/HalloweenExport.prefab
-  artifactKey: Guid(bdd436bbb7a57e24f920b4b315704c7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HalloweenExport/HalloweenExport.prefab using Guid(bdd436bbb7a57e24f920b4b315704c7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '518a6725ce90e0d53387e464436b000b') in 0.251951 seconds 
+  Time since last request: 8.152478 seconds.
+  path: Assets/VFX/Explosion.vfx
+  artifactKey: Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VFX/Explosion.vfx using Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6fca538498e767be7ec9bd08d8cf8db') in 0.024230 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.242173 seconds.
+  path: Assets/VFX/Explosion.vfx
+  artifactKey: Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VFX/Explosion.vfx using Guid(1e559355342b195459b8bfa0d337ab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b28ac756c98bb7d444d6cb71e03ea6c8') in 0.026766 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.315834 seconds.
+  path: Assets/Prefabs/Explosion.prefab
+  artifactKey: Guid(d3941272c7fb5da4c8492d88d57610e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Explosion.prefab using Guid(d3941272c7fb5da4c8492d88d57610e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '060ac5764125b25dcc55f5470e0130aa') in 0.034536 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.885818 seconds.
+  path: Assets/Prefabs/Explosion.prefab
+  artifactKey: Guid(d3941272c7fb5da4c8492d88d57610e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Explosion.prefab using Guid(d3941272c7fb5da4c8492d88d57610e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8a945b579074c1ac3db53fd5abf784b') in 0.016353 seconds 
