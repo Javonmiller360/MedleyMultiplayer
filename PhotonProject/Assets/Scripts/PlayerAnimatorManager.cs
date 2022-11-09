@@ -5,16 +5,17 @@ using UnityEngine;
 
 public class PlayerAnimatorManager : MonoBehaviourPun
 {
-    #region MonoBehaviour Callbacks
-    private Animator animator;
     #region Private Fields
 
 
     [SerializeField]
     private float directionDampTime = 0.25f;
-
+    private Animator animator;
 
     #endregion
+    #region MonoBehaviour Callbacks
+
+
     // Use this for initialization
     void Start()
     {

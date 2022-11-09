@@ -10,44 +10,83 @@ public class GameManager : MonoBehaviourPunCallbacks
     #region Public Fields
     public static GameManager Instance;
     [Tooltip("The prefab to use for representing the player")]
-    public GameObject playerPrefab;
     #endregion
-    #region Photon Callbacks
-
+    #region Private Fields
+    private GameObject instance;
+    [Tooltip("The prefab to use for representing the player")]
+    [SerializeField]
+    private GameObject playerPrefab;
+    #endregion
+    #region MonoBehaviour CallBacks
 
     /// <summary>
-    /// Called when the local player left the room. We need to load the launcher scene.
+    /// MonoBehaviour method called on GameObject by Unity during initialization phase.
     /// </summary>
-    public override void OnLeftRoom()
+    void Start()
     {
-        SceneManager.LoadScene(0);
+        Instance = this;
+
+        // in case we started this demo with the wrong scene being active, simply load the menu scene
+        if (!PhotonNetwork.IsConnected)
+        {
+            SceneManager.LoadScene("PunBasics-Launcher");
+
+            return;
+        }
+
+        if (playerPrefab == null)
+        { // #Tip Never assume public properties of Components are filled up properly, always check and inform the developer of it.
+
+            Debug.LogError("<Color=Red><b>Missing</b></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
+        }
+        else
+        {
+
+
+            if (PlayerManager.LocalPlayerInstance == null)
+            {
+                Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
+
+                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+                PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
+            }
+            else
+            {
+
+                Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
+            }
+
+
+        }
+
     }
 
+    /// <summary>
+    /// MonoBehaviour method called on GameObject by Unity on every frame.
+    /// </summary>
+    void Update()
+    {
+        // "back" button of phone equals "Escape". quit app if that's pressed
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitApplication();
+        }
+    }
 
     #endregion
 
 
     #region Public Methods
-
-
-    public void LeaveRoom()
+    public bool LeaveRoom()
     {
-        PhotonNetwork.LeaveRoom();
+        return PhotonNetwork.LeaveRoom();
     }
-    void Start()
+
+    public void QuitApplication()
     {
-        Instance = this;
-        if (PlayerManager.LocalPlayerInstance == null)
-        {
-            Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
-            // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-            PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
-        }
-        else
-        {
-            Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
-        }
+        Application.Quit();
     }
+
     #endregion
     #region Private Methods
     void LoadArena()
